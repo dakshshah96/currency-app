@@ -10,10 +10,9 @@ You can check out the live demo of this project at GitHub Pages (_Link will be a
 
 The project attempts to satisfactorily fulfill the following user stories:
 
-* User story 1
-* User story 2
-* User story 3
-* User story 4
+* Users can convert one currency to another
+* Users can save a particular currency conversion as favorite
+* Users can access the list of their favorite conversions
 
 ## Built With
 
