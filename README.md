@@ -1,6 +1,6 @@
 # Currency App
 
-A currency app built as a part of the capstone project for Thinkful.
+A simple currency app built using the [Fixer.io](http://fixer.io/) API.
 
 ## Live Demo
 
@@ -25,7 +25,9 @@ The project attempts to satisfactorily fulfill the following user stories:
 
 ## Thanks
 
-A list of resources available freely on the internet without which this project wouldn't be possible.
+Here's a list of awesome resources available freely on the internet without which this project wouldn't be possible:
+
+* [Fixer.io](http://fixer.io/) is a free JSON API for current and historical foreign exchange rates published by the European Central Bank. Check out the [source code](https://github.com/hakanensari/fixer-io).
 
 ## Author
 
