@@ -29,7 +29,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <!-- Permanent header -->
         <div class="row header text-center">
             <div class="col-lg-12">
-                <h1>Currency App</h1>
+                <h1>Currency Central</h1>
                 <p>A project by <a href="https://daksh.me">Daksh Shah</a></p>
             </div>
         </div>
@@ -38,22 +38,108 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <section id="intro">
             <div class="row text-center">
                 <div class="col-lg-12">
-
+                    <p>The one stop solution to all your currency needs. This is Currency Central.</p>
+                    <button class="btn btn-primary">Convert Currencies</button>
+                    <button class="btn btn-primary">Favorite Currencies</button>
                 </div>
             </div>
         </section>
 
         <!-- Conversion screen -->
-        <section id="questions" hidden>
+        <section id="conversion">
             <div class="row text-center">
-                <div class="col-lg-12">
-
+                <div class="col">
+                    <form id="js-convert-form">
+                        <input type="number" name="from-entry" id="from-entry" placeholder="250" required>
+                        <select id="from-currency">
+                            <option>AUD</option>
+                            <option>BGN</option>
+                            <option>BRL</option>
+                            <option>CAD</option>
+                            <option>CHF</option>
+                            <option>CNY</option>
+                            <option>CZK</option>
+                            <option>DKK</option>
+                            <option>GBP</option>
+                            <option>HKD</option>
+                            <option>HRK</option>
+                            <option>HUF</option>
+                            <option>IDR</option>
+                            <option>ILS</option>
+                            <option>INR</option>
+                            <option>JPY</option>
+                            <option>KRW</option>
+                            <option>MXN</option>
+                            <option>MYR</option>
+                            <option>NOK</option>
+                            <option>NZD</option>
+                            <option>PHP</option>
+                            <option>PLN</option>
+                            <option>RON</option>
+                            <option>RUB</option>
+                            <option>SEK</option>
+                            <option>SGD</option>
+                            <option>THB</option>
+                            <option>TRY</option>
+                            <option>USD</option>
+                            <option>ZAR</option>
+                        </select>
+                        <input type="number" name="to-entry" id="to-entry" placeholder="100" required>
+                        <select id="to-currency">
+                            <option>AUD</option>
+                            <option>BGN</option>
+                            <option>BRL</option>
+                            <option>CAD</option>
+                            <option>CHF</option>
+                            <option>CNY</option>
+                            <option>CZK</option>
+                            <option>DKK</option>
+                            <option>GBP</option>
+                            <option>HKD</option>
+                            <option>HRK</option>
+                            <option>HUF</option>
+                            <option>IDR</option>
+                            <option>ILS</option>
+                            <option>INR</option>
+                            <option>JPY</option>
+                            <option>KRW</option>
+                            <option>MXN</option>
+                            <option>MYR</option>
+                            <option>NOK</option>
+                            <option>NZD</option>
+                            <option>PHP</option>
+                            <option>PLN</option>
+                            <option>RON</option>
+                            <option>RUB</option>
+                            <option>SEK</option>
+                            <option>SGD</option>
+                            <option>THB</option>
+                            <option>TRY</option>
+                            <option>USD</option>
+                            <option>ZAR</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <p><span class="from-value">5</span> <span class="from-currency">US Dollar</span> equals <span class="to-value">64.47</span> <span class="to-currency">Indian Rupee</span></p>
+                </div>
+            </div>
+            <div class="row text-center" hidden>
+                <div class="col">
+                    <button class="btn btn-primary">Add to favorites</button>
                 </div>
             </div>
         </section>
 
         <!-- Favorites screen -->
         <section id="favorites" hidden>
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <p>All your favorites listed here.</p>
+                </div>
+            </div>
             <div class="row text-center">
                 <div class="col-lg-12">
 
@@ -65,7 +151,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <section id="add-favorite" hidden>
             <div class="row text-center">
                 <div class="col-lg-12">
-
+                
                 </div>
             </div>
         </section>
