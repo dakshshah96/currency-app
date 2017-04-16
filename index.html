@@ -39,7 +39,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
             <div class="row text-center">
                 <div class="col-lg-12">
                     <p>The one stop solution to all your currency needs. This is Currency Central.</p>
-                    <button class="btn btn-primary">Convert Currencies</button>
+                    <button class="btn btn-primary" id="convert-btn">Convert Currencies</button>
                     <button class="btn btn-primary">Favorite Currencies</button>
                 </div>
             </div>
@@ -84,7 +84,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                             <option>USD</option>
                             <option>ZAR</option>
                         </select>
-                        <input type="number" name="to-entry" id="to-entry" placeholder="100" required>
+                        <label for="convert-currency">Convert to:</label>
                         <select id="to-currency">
                             <option>AUD</option>
                             <option>BGN</option>
@@ -121,11 +121,6 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                     </form>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col">
-                    <p><span class="from-value">5</span> <span class="from-currency">US Dollar</span> equals <span class="to-value">64.47</span> <span class="to-currency">Indian Rupee</span></p>
-                </div>
-            </div>
             <div class="row text-center" hidden>
                 <div class="col">
                     <button class="btn btn-primary">Add to favorites</button>
@@ -133,16 +128,24 @@ This project was made by Daksh Shah. You can read more about him at https://daks
             </div>
         </section>
 
+        <!-- Results screen -->
+        <section id="results" hidden>
+            <div class="row text-center">
+                <div class="col">
+                    <p><span class="from-value"></span> <span class="from-currency"></span> equals <span class="to-value"></span> <span class="to-currency"></span></p>
+                </div>
+            </div>
+        </section>
+
         <!-- Favorites screen -->
         <section id="favorites" hidden>
             <div class="row text-center">
-                <div class="col-lg-12">
+                <div class="col">
                     <p>All your favorites listed here.</p>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-lg-12">
-
+                <div class="col">
                 </div>
             </div>
         </section>
@@ -150,17 +153,8 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <!-- Add favorites screen -->
         <section id="add-favorite" hidden>
             <div class="row text-center">
-                <div class="col-lg-12">
-                
-                </div>
-            </div>
-        </section>
-
-        <!-- Results screen -->
-        <section id="results" hidden>
-            <div class="row text-center">
-                <div class="col-lg-12">
-
+                <div class="col">
+                    <button class="btn btn-primary">Add to favorites</button>
                 </div>
             </div>
         </section>
