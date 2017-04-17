@@ -18,7 +18,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Currency Central</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i|Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i|Open+Sans:300,300i,400,400i,600,600i|Raleway:100,300" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
@@ -29,18 +29,26 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <!-- Permanent header -->
         <div class="row header text-center">
             <div class="col">
-                <h1>Currency Central</h1>
-                <p>A project by <a href="https://daksh.me">Daksh Shah</a></p>
+                <h3>CURRENCY CENTRAL</h3>
             </div>
         </div>
 
         <!-- Introduction screen -->
         <section id="intro">
-            <div class="row text-center">
-                <div class="col">
-                    <p>The one stop solution to all your currency needs. This is Currency Central.</p>
-                    <button class="btn btn-primary convert-btn">Convert Currencies</button>
-                    <button class="btn btn-primary show-favorites">Favorite Currencies</button>
+            <div class="row">
+                <div class="col text-center">
+                    <img class="hero-icon" src="img/currencies.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <p>This is Currency Central. The one stop solution for all your currency needs.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button class="btn btn-primary convert-btn effect effect-5">Convert Currencies</button>
+                    <button class="btn btn-primary show-favorites effect effect-5">Favorite Currencies</button>
                 </div>
             </div>
         </section>
@@ -50,6 +58,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
             <div class="row text-center">
                 <div class="col">
                     <form id="js-convert-form">
+                        <div class="form-group">
                         <input type="number" name="from-entry" id="from-entry" placeholder="250" required>
                         <select id="from-currency">
                             <option>AUD</option>
@@ -84,6 +93,8 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                             <option>USD</option>
                             <option>ZAR</option>
                         </select>
+                        </div>
+                        <div class="form-group">
                         <label for="convert-currency">Convert to:</label>
                         <select id="to-currency">
                             <option>AUD</option>
@@ -118,6 +129,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                             <option>USD</option>
                             <option>ZAR</option>
                         </select>
+                        </div>
                     </form>
                 </div>
             </div>
