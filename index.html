@@ -16,7 +16,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title></title>
+        <title>Currency Central</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i|Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
@@ -28,7 +28,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
 
         <!-- Permanent header -->
         <div class="row header text-center">
-            <div class="col-lg-12">
+            <div class="col">
                 <h1>Currency Central</h1>
                 <p>A project by <a href="https://daksh.me">Daksh Shah</a></p>
             </div>
@@ -37,16 +37,16 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <!-- Introduction screen -->
         <section id="intro">
             <div class="row text-center">
-                <div class="col-lg-12">
+                <div class="col">
                     <p>The one stop solution to all your currency needs. This is Currency Central.</p>
-                    <button class="btn btn-primary" id="convert-btn">Convert Currencies</button>
-                    <button class="btn btn-primary">Favorite Currencies</button>
+                    <button class="btn btn-primary convert-btn">Convert Currencies</button>
+                    <button class="btn btn-primary show-favorites">Favorite Currencies</button>
                 </div>
             </div>
         </section>
 
         <!-- Conversion screen -->
-        <section id="conversion">
+        <section id="conversion" hidden>
             <div class="row text-center">
                 <div class="col">
                     <form id="js-convert-form">
@@ -121,9 +121,9 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                     </form>
                 </div>
             </div>
-            <div class="row text-center" hidden>
+            <div class="row text-center">
                 <div class="col">
-                    <button class="btn btn-primary">Add to favorites</button>
+                    <button class="btn btn-primary show-favorites">Favorite Currencies</button>
                 </div>
             </div>
         </section>
@@ -135,6 +135,12 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                     <p><span class="from-value"></span> <span class="from-currency"></span> equals <span class="to-value"></span> <span class="to-currency"></span></p>
                 </div>
             </div>
+            <div class="row text-center">
+                <div class="col">
+                    <button class="btn btn-primary" id="favorite-btn">Add to favorites</button>
+                    <p id="success-message"></p>
+                </div>
+            </div>
         </section>
 
         <!-- Favorites screen -->
@@ -142,19 +148,17 @@ This project was made by Daksh Shah. You can read more about him at https://daks
             <div class="row text-center">
                 <div class="col">
                     <p>All your favorites listed here.</p>
+                    <ul id="favorites-list"></ul>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col">
+                    <button class="btn btn-primary" id="delete-favorites">Delete all favorites</button>
                 </div>
             </div>
-        </section>
-
-        <!-- Add favorites screen -->
-        <section id="add-favorite" hidden>
             <div class="row text-center">
                 <div class="col">
-                    <button class="btn btn-primary">Add to favorites</button>
+                    <button class="btn btn-primary convert-btn">Convert Currencies</button>
                 </div>
             </div>
         </section>

@@ -43,6 +43,13 @@ var currencies = {
     ZAR: "South African Rand"
 }
 
+var favorites = [];
+
+if (localStorage.getItem("favorites") !== null) {
+    favorites = JSON.parse(localStorage.getItem("favorites"));
+    generateFavoritesList();
+}
+
 $.getJSON("http://api.fixer.io/latest", function(data) {
     if (typeof fx !== "undefined" && fx.rates) {
         fx.rates = data.rates;
@@ -55,6 +62,20 @@ $.getJSON("http://api.fixer.io/latest", function(data) {
     }
 });
 
+function generateFavoritesList() {
+    var list = $('#favorites-list');
+    var listParent = list.parent();
+
+    list.empty().each(function(i) {
+        for (var x = 0; x < favorites.length; x++) {
+            $(this).append('<li>' + favorites[x][0] + ' to ' + favorites[x][1] + '</li>');
+            if (x == favorites.length - 1) {
+                $(this).appendTo(listParent);
+            }
+        }
+    });
+}
+
 function updateResults() {
 
     var fromCurr = $('#from-currency').find(':selected').text();
@@ -63,6 +84,7 @@ function updateResults() {
     var fromAmount = $('#from-entry').val();
     var converted = fx.convert(fromAmount, {from: fromCurr, to: toCurr}).toFixed(2);
 
+    $('#success-message').empty();
     if (fromAmount !== "") {
         $('#results').removeAttr('hidden');
         $('.from-value').text(fromAmount);
@@ -76,10 +98,44 @@ function updateResults() {
 
 $(function() {
 
+    $('.convert-btn').click(function() {
+        $('#conversion').removeAttr('hidden');
+        $('#intro').attr('hidden', true);
+        $('#favorites').attr('hidden', true);
+        $('#results').attr('hidden', true);
+    });
+
+    $('.show-favorites').click(function() {
+        generateFavoritesList();
+        $('#favorites').removeAttr('hidden');
+        $('#intro').attr('hidden', true);
+        $('#conversion').attr('hidden', true);
+        $('#results').attr('hidden', true);
+    });
+
+    $('#favorite-btn').on('click', function(e) {
+        e.preventDefault();
+        var fromCurr = $('#from-currency').find(':selected').text();
+        var toCurr = $('#to-currency').find(':selected').text();
+        favorites.push([fromCurr, toCurr]);
+        $('#success-message').text(fromCurr + " to " + toCurr + " added to favorites.");
+        generateFavoritesList();
+    });
+
+    $('#delete-favorites').click(function() {
+        localStorage.removeItem("favorites");
+        favorites = [];
+        generateFavoritesList();
+    });
+
     $("#from-currency, #to-currency").select2();
 
     $('#from-entry').on('input', updateResults);
 
     $('#from-currency, #to-currency').change(updateResults);
+
+    $(window).on('beforeunload', function() {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
 
 });
