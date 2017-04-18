@@ -62,6 +62,20 @@ $.getJSON("https://api.fixer.io/latest", function(data) {
     }
 });
 
+function searchForArray(haystack, needle){
+    var i, j, current;
+    for (i = 0; i < haystack.length; ++i) {
+        if (needle.length === haystack[i].length) {
+            current = haystack[i];
+            for (j = 0; j < needle.length && needle[j] === current[j]; ++j);
+            if (j === needle.length)
+                return i;
+        }
+    }
+
+    return -1;
+}
+
 function generateFavoritesList() {
     var list = $('#favorites-list');
     var listParent = list.parent();
@@ -132,8 +146,12 @@ $(function() {
         var fromCurr = $('#from-currency').find(':selected').text();
         var toCurr = $('#to-currency').find(':selected').text();
         $('#success-message').fadeIn('fast');
-        favorites.push([fromCurr, toCurr]);
-        $('#success-message').html('<i style="color: green" class="fa fa-check-circle-o" aria-hidden="true"></i>       ' + fromCurr + ' to ' + toCurr + ' added to favorites.');
+        if (searchForArray(favorites, [fromCurr, toCurr]) === -1) {
+            favorites.push([fromCurr, toCurr]);
+            $('#success-message').html('<i style="color: green" class="fa fa-check-circle-o" aria-hidden="true"></i>       ' + fromCurr + ' to ' + toCurr + ' added to favorites.');
+        } else {
+            $('#success-message').html('<i style="color: red" class="fa fa-times" aria-hidden="true"></i>       ' + 'Bam, this favorite already exists!');
+        }
         setTimeout(function() {
             $('#success-message').fadeOut('fast');
         }, 2000);
