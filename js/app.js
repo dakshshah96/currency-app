@@ -74,6 +74,12 @@ function generateFavoritesList() {
             }
         }
     });
+
+    if (favorites.length === 0) {
+        $('.favorites-message').text("Looks like you have no favorites saved!");
+    } else {
+        $('.favorites-message').text("You currently have " + favorites.length + " favorites saved.");
+    }
 }
 
 function updateResults() {
@@ -98,6 +104,13 @@ function updateResults() {
 
 $(function() {
 
+    $('.header h3').click(function() {
+        $('#conversion').attr('hidden', true);
+        $('#favorites').attr('hidden', true);
+        $('#results').attr('hidden', true);
+        $('#intro').removeAttr('hidden');
+    });
+
     $('.convert-btn').click(function() {
         $('#conversion').removeAttr('hidden');
         $('#intro').attr('hidden', true);
@@ -117,8 +130,12 @@ $(function() {
         e.preventDefault();
         var fromCurr = $('#from-currency').find(':selected').text();
         var toCurr = $('#to-currency').find(':selected').text();
+        $('#success-message').fadeIn('fast');
         favorites.push([fromCurr, toCurr]);
-        $('#success-message').text(fromCurr + " to " + toCurr + " added to favorites.");
+        $('#success-message').html('<i style="color: green" class="fa fa-check-circle-o" aria-hidden="true"></i>       ' + fromCurr + ' to ' + toCurr + ' added to favorites.');
+        setTimeout(function() {
+            $('#success-message').fadeOut('fast');
+        }, 2000);
         generateFavoritesList();
     });
 

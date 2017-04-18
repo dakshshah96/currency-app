@@ -17,26 +17,22 @@ Font Awesome
 
 /* main styles */
 
-body {
-    font-family: 'Raleway';
+html {
     font-size: 18px;
+    height: 100%;
 }
 
-body::before {
-    content: "";
-    z-index: -1;
+body {
+    height: 100%;
+    font-family: 'Raleway';
+    color: white;
     background-color: #545da9;
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0d…0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
     background-image: -webkit-linear-gradient(top left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
     background-image: -moz-linear-gradient(top left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
     background-image: -o-linear-gradient(top left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
     background-image: linear-gradient(to bottom left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* button styles */
@@ -46,157 +42,15 @@ body::before {
   position: relative;
   text-decoration: none;
   color: #fff;
-  text-transform: capitalize;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   padding: 20px 0px;
   width: 200px;
   border-radius: 6px;
   overflow: hidden;
+  background: transparent;
+  border-color: white;
 }
-
-.effect.effect-1 {
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-1:before {
-  content: "\f178";
-  font-family: FontAwesome;
-  font-size: 15px;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  height: 100%;
-  width: 40px;
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-1:hover {
-  text-indent: -20px;
-}
-.effect.effect-1:hover:before {
-  opacity: 1;
-  text-indent: 0px;
-}
-
-.effect.effect-2 {
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-2:before {
-  content: "\f0a4";
-  font-family: FontAwesome;
-  font-size: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  top: 0;
-  right: -30px;
-  width: 30px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 0px 6px 6px 0px;
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-  text-align: center;
-}
-.effect.effect-2:hover {
-  text-indent: -30px;
-}
-.effect.effect-2:hover:before {
-  right: 0;
-  text-indent: 0px;
-}
-
-.effect.effect-3 {
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-3:before {
-  content: "\f178";
-  font-family: FontAwesome;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  top: 100%;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: 30px;
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-3:hover {
-  text-indent: -9999px;
-}
-.effect.effect-3:hover:before {
-  top: 0;
-  text-indent: 0;
-}
-
-.effect.effect-4 {
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-4:before {
-  content: "\f178";
-  font-family: FontAwesome;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: 30px;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-.effect.effect-4:hover {
-  text-indent: -9999px;
-}
-.effect.effect-4:hover:before {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-  text-indent: 0;
-}
-
 .effect.effect-5 {
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
@@ -228,17 +82,14 @@ body::before {
 }
 .effect.effect-5:hover {
   text-indent: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  border-color: white;
 }
 .effect.effect-5:hover:before {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   text-indent: 0;
-}
-.convert-btn:before {
-    content: "\f155";
-}
-.show-favorites:before {
-    content: "\f005";
 }
 
 /* header styles */
@@ -250,9 +101,9 @@ body::before {
 }
 
 .header h3 {
-    color: white;
     font-weight: 100;
     font-family: 'Raleway';
+    cursor: pointer;
 }
 
 /* intro styles */
@@ -267,7 +118,6 @@ body::before {
 }
 
 #intro p {
-    color: white;
     font-family: 'Raleway';
     font-weight: 300px;
     font-size: 3em;
@@ -275,33 +125,121 @@ body::before {
     margin-bottom: 50px;
 }
 
-#intro button {
-    background: transparent;
-    border-color: white;
+#intro .convert-btn:hover {
+    background: green;
 }
 
-#intro button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
+#intro .show-favorites:hover {
+    background: #FF5800;
+}
+
+@media only screen and (max-width: 978px) {
+    #intro {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 684px) {
+    #intro {
+        padding: 0 10px;
+    }
+
+    #intro p {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 492px) {
+    #intro p {
+        font-size: 1.5em;
+    }
+
+    #intro button {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+.convert-btn:before {
+    content: "\f155";
+}
+
+.show-favorites:before {
+    content: "\f005";
 }
 
 /* conversion screen */
 
-#js-convert-form, #js-convert-form input {
-    font-family: 'Monaco';
+#conversion {
+    margin-bottom: 50px;
+}
+
+#js-convert-form, #js-convert-form input, #js-convert-form select, #js-convert-form option {
+    font-family: 'Source Code Pro';
     font-size: 1.2em;
 }
 
+.select2-results {
+    color: black;
+}
+
 #js-convert-form input {
+    color: white;
     border: none;
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid #c0c0c0;
     outline: none;
+    background: transparent;
+}
+
+#js-convert-form input::placeholder {
+    color: #c0c0c0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 #js-convert-form input:focus {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
 }
 
+#favorite-btn:hover {
+    background: green;
+}
+
+#results .show-favorites:hover {
+    background: #FF5800;
+}
+
+/* Results screen */
+
+#results .result-2 {
+    margin-bottom: 30px;
+}
+
+.result-1 {
+    margin-bottom: -5px;
+}
+
+.result-2 {
+    font-size: 2em;
+}
+
+#favorite-btn:before {
+    content: "\f005";
+}
+#favorites .convert-btn:hover {
+    background: green;
+}
+#delete-favorites:hover {
+    background: #C40233;
+}
+#delete-favorites:before {
+    content: "\f00d";
+}
 
 
 

@@ -18,7 +18,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Currency Central</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i|Open+Sans:300,300i,400,400i,600,600i|Raleway:100,300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i|Open+Sans:300,300i,400,400i,600,600i|Raleway:100,300|Source+Code+Pro" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
@@ -59,7 +59,7 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                 <div class="col">
                     <form id="js-convert-form">
                         <div class="form-group">
-                        <input type="number" name="from-entry" id="from-entry" placeholder="250" required>
+                        <input type="number" name="from-entry" id="from-entry" placeholder="e.g., 250" required>
                         <select id="from-currency">
                             <option>AUD</option>
                             <option>BGN</option>
@@ -133,24 +133,21 @@ This project was made by Daksh Shah. You can read more about him at https://daks
                     </form>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col">
-                    <button class="btn btn-primary show-favorites">Favorite Currencies</button>
-                </div>
-            </div>
         </section>
 
         <!-- Results screen -->
         <section id="results" hidden>
             <div class="row text-center">
                 <div class="col">
-                    <p><span class="from-value"></span> <span class="from-currency"></span> equals <span class="to-value"></span> <span class="to-currency"></span></p>
+                    <p class="result-1"><span class="from-value"></span> <span class="from-currency"></span> equals</p>
+                    <p class="result-2"><strong><span class="to-value"></span> <span class="to-currency"></span></strong></p>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <button class="btn btn-primary" id="favorite-btn">Add to favorites</button>
                     <p id="success-message"></p>
+                    <button class="btn btn-primary effect effect-5" id="favorite-btn">Add to favorites</button>
+                    <button class="btn btn-primary show-favorites effect effect-5">See favorites</button>
                 </div>
             </div>
         </section>
@@ -159,18 +156,14 @@ This project was made by Daksh Shah. You can read more about him at https://daks
         <section id="favorites" hidden>
             <div class="row text-center">
                 <div class="col">
-                    <p>All your favorites listed here.</p>
+                    <p class="favorites-message"></p>
                     <ul id="favorites-list"></ul>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <button class="btn btn-primary" id="delete-favorites">Delete all favorites</button>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <button class="btn btn-primary convert-btn">Convert Currencies</button>
+                    <button class="btn btn-primary convert-btn effect effect-5">Convert Currencies</button>
+                    <button class="btn btn-primary effect effect-5" id="delete-favorites">Delete all favorites</button>
                 </div>
             </div>
         </section>
