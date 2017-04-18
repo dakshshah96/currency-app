@@ -112,6 +112,7 @@ $(function() {
     });
 
     $('.convert-btn').click(function() {
+        $('#from-entry').val('');
         $('#conversion').removeAttr('hidden');
         $('#intro').attr('hidden', true);
         $('#favorites').attr('hidden', true);
