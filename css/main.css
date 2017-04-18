@@ -154,7 +154,7 @@ body {
         font-size: 1.5em;
     }
 
-    #intro button {
+    button {
         display: block;
         margin: 0 auto;
         margin-bottom: 10px;
