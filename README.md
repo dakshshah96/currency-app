@@ -4,7 +4,7 @@ A simple currency app built using the [Fixer.io](http://fixer.io/) API.
 
 ## Live Demo
 
-You can check out the live demo of this project at GitHub Pages (_Link will be added once the project is published_).
+You can check out the live demo of this project at [GitHub Pages](https://dakshshah96.github.io/currency-app/).
 
 ## User stories
 
@@ -12,7 +12,7 @@ The project attempts to satisfactorily fulfill the following user stories:
 
 * Users can convert one currency to another
 * Users can save a particular currency conversion as favorite
-* Users can access the list of their favorite conversions
+* Users can access the list of their favorite conversions and delete favorites
 
 ## Built With
 
@@ -24,9 +24,12 @@ The project attempts to satisfactorily fulfill the following user stories:
 
 ## Thanks
 
-Here's a list of awesome resources available freely on the internet without which this project wouldn't be possible:
+Here's a list of the awesome resources without which this project wouldn't look as cool as it looks right now:
 
 * [Fixer.io](http://fixer.io/) is a free JSON API for current and historical foreign exchange rates published by the European Central Bank. Check out the [source code](https://github.com/hakanensari/fixer-io).
+* Currency Central logo icon made by [Freepik](http://www.freepik.com/) from [Flaticon](http://www.flaticon.com/)
+* Button icons by [Font Awesome](http://fontawesome.io/)
+* Searchable select boxes made possible by [Select2](https://select2.github.io/), the jQuery replacement for select boxes.
 
 ## Author
 
