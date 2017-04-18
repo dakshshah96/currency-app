@@ -76,7 +76,7 @@ function generateFavoritesList() {
     });
 
     if (favorites.length === 0) {
-        $('.favorites-message').text("Looks like you have no favorites saved!");
+        $('.favorites-message').text("Looks like you have no favorites saved. You can add new favorites while converting currencies!");
     } else {
         $('.favorites-message').text("You currently have " + favorites.length + " favorites saved.");
     }
