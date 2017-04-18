@@ -50,7 +50,7 @@ if (localStorage.getItem("favorites") !== null) {
     generateFavoritesList();
 }
 
-$.getJSON("http://api.fixer.io/latest", function(data) {
+$.getJSON("https://api.fixer.io/latest", function(data) {
     if (typeof fx !== "undefined" && fx.rates) {
         fx.rates = data.rates;
         fx.base = data.base;
