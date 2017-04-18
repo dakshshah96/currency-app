@@ -27,6 +27,7 @@ The project attempts to satisfactorily fulfill the following user stories:
 Here's a list of the awesome resources without which this project wouldn't look as cool as it looks right now:
 
 * [Fixer.io](http://fixer.io/) is a free JSON API for current and historical foreign exchange rates published by the European Central Bank. Check out the [source code](https://github.com/hakanensari/fixer-io).
+* [money.js](http://openexchangerates.github.io/money.js/), the simple JavaScript currency conversion library with no dependencies, in just over 1 kb.
 * Currency Central logo icon made by [Freepik](http://www.freepik.com/) from [Flaticon](http://www.flaticon.com/)
 * Button icons by [Font Awesome](http://fontawesome.io/)
 * Searchable select boxes made possible by [Select2](https://select2.github.io/), the jQuery replacement for select boxes.
