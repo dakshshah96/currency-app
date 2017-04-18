@@ -214,6 +214,13 @@ input[type=number]::-webkit-outer-spin-button {
     background: #FF5800;
 }
 
+/* Favorites screen */
+
+.fav-container {
+    margin: 0 auto;
+    width: 25%;
+}
+
 /* Results screen */
 
 #results .result-2 {
