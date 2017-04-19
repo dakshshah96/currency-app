@@ -11,37 +11,41 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
 
 // object to handle currency acronyms
 var currencies = {
-    AUD: "Australian Dollar",
-    BGN: "Bulgarian Lev",
-    BRL: "Brazilian Real",
-    CAD: "Canadian Dollar",
-    CHF: "Swiss Frank",
-    CNY: "Chinese Yuan",
-    CZK: "Czech Republic Koruna",
-    DKK: "Danish Krone",
-    GBP: "British Pound",
-    HKD: "Hong Kong Dollar",
-    HRK: "Croatian Kuna",
-    HUF: "Hungarian Forint",
-    IDR: "Indonesian Rupiah",
-    ILS: "Israeli New Shekel",
-    INR: "Indian Rupee",
-    JPY: "Japanese Yen",
-    KRW: "South Korean Won",
-    MXN: "Mexican Peso",
-    MYR: "Malaysian Ringgit",
-    NOK: "Norwegian Krone",
-    NZD: "New Zealand Dollar",
-    PHP: "Philippine Peso",
-    PLN: "Polish Zloty",
-    RON: "Romanian Leu",
-    RUB: "Russian Ruble",
-    SEK: "Swedish Krona",
-    SGD: "Singapore Dollar",
-    THB: "Thai Baht",
-    TRY: "Turkish Lira",
-    USD: "US Dollar",
-    ZAR: "South African Rand"
+    fullForm: {
+        AUD: "Australian Dollar",
+        BGN: "Bulgarian Lev",
+        BRL: "Brazilian Real",
+        CAD: "Canadian Dollar",
+        CHF: "Swiss Frank",
+        CNY: "Chinese Yuan",
+        CZK: "Czech Republic Koruna",
+        DKK: "Danish Krone",
+        GBP: "British Pound",
+        HKD: "Hong Kong Dollar",
+        HRK: "Croatian Kuna",
+        HUF: "Hungarian Forint",
+        IDR: "Indonesian Rupiah",
+        ILS: "Israeli New Shekel",
+        INR: "Indian Rupee",
+        JPY: "Japanese Yen",
+        KRW: "South Korean Won",
+        MXN: "Mexican Peso",
+        MYR: "Malaysian Ringgit",
+        NOK: "Norwegian Krone",
+        NZD: "New Zealand Dollar",
+        PHP: "Philippine Peso",
+        PLN: "Polish Zloty",
+        RON: "Romanian Leu",
+        RUB: "Russian Ruble",
+        SEK: "Swedish Krona",
+        SGD: "Singapore Dollar",
+        THB: "Thai Baht",
+        TRY: "Turkish Lira",
+        USD: "US Dollar",
+        ZAR: "South African Rand"
+    },
+    fromCurr: "AUD",
+    toCurr: "AUD"
 }
 
 var favorites = [];
@@ -102,8 +106,8 @@ function generateFavoritesList() {
 
 function updateResults() {
 
-    var fromCurr = $('#from-currency').find(':selected').text();
-    var toCurr = $('#to-currency').find(':selected').text();
+    var fromCurr = currencies.fromCurr;
+    var toCurr = currencies.toCurr;
 
     var fromAmount = $('#from-entry').val();
     var converted = fx.convert(fromAmount, {from: fromCurr, to: toCurr}).toFixed(2);
@@ -112,15 +116,29 @@ function updateResults() {
     if (fromAmount !== "") {
         $('#results').removeAttr('hidden');
         $('.from-value').text(fromAmount);
-        $('.from-currency').text(currencies[fromCurr]);
+        $('.from-currency').text(currencies.fullForm[fromCurr]);
         $('.to-value').text(converted);
-        $('.to-currency').text(currencies[toCurr]);
+        $('.to-currency').text(currencies.fullForm[toCurr]);
     } else {
         $('#results').attr('hidden', true);
     }
 }
 
 $(function() {
+
+    $('.from-currency-modal').on('click', '.currency-label', function() {
+        currencies.fromCurr = $(this).text();
+        $('.btn-from-currency').html('<span class="flag-icon flag-icon-' + currencies.fromCurr.toLowerCase().substr(0, 2) + '"></span>' + currencies.fromCurr);
+        $('.from-currency-modal').modal('hide');
+        updateResults();
+    });
+
+    $('.to-currency-modal').on('click', '.currency-label', function() {
+        currencies.toCurr = $(this).text();
+        $('.btn-to-currency').html('<span class="flag-icon flag-icon-' + currencies.toCurr.toLowerCase().substr(0, 2) + '"></span>' + currencies.toCurr);
+        $('.to-currency-modal').modal('hide');
+        updateResults();
+    });
 
     // delete individual item from favorites
     $('#favorites-list').on('click', 'li', function() {
@@ -157,8 +175,8 @@ $(function() {
     // add new favorite from conversion screen
     $('#favorite-btn').on('click', function(e) {
         e.preventDefault();
-        var fromCurr = $('#from-currency').find(':selected').text();
-        var toCurr = $('#to-currency').find(':selected').text();
+        var fromCurr = currencies.fromCurr;
+        var toCurr = currencies.toCurr;
         $('#success-message').fadeIn('fast');
         // check if item already exists in favorites
         if (searchForArray(favorites, [fromCurr, toCurr]) === -1) {
@@ -180,14 +198,8 @@ $(function() {
         generateFavoritesList();
     });
 
-    // initialize select2 select boxes
-    $("#from-currency, #to-currency").select2();
-
     // update conversion results on input
     $('#from-entry').on('input', updateResults);
-
-    // update conversion results on currency change
-    $('#from-currency, #to-currency').change(updateResults);
 
     // set localStorage item before browser window closes
     $(window).on('beforeunload', function() {
