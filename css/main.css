@@ -220,6 +220,13 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
     width: 25%;
 }
+.delete-icon {
+    margin-left: 10px;
+}
+.delete-icon:hover {
+    color: #FF3F34;
+    cursor: pointer;
+}
 
 /* Results screen */
 
@@ -242,7 +249,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: green;
 }
 #delete-favorites:hover {
-    background: #C40233;
+    background: #c40233;
 }
 #delete-favorites:before {
     content: "\f00d";

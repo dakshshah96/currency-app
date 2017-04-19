@@ -82,7 +82,7 @@ function generateFavoritesList() {
 
     list.empty().each(function(i) {
         for (var x = 0; x < favorites.length; x++) {
-            $(this).append('<li>' + favorites[x][0] + ' to ' + favorites[x][1] + '</li>');
+            $(this).append('<li>' + favorites[x][0] + ' to ' + favorites[x][1] + '<i class="fa fa-trash delete-icon" aria-hidden="true"></i></li>');
             if (x == favorites.length - 1) {
                 $(this).appendTo(listParent);
             }
@@ -117,6 +117,11 @@ function updateResults() {
 }
 
 $(function() {
+
+    $('#favorites-list').on('click', 'li', function() {
+        favorites.splice($(this).index(), 1);
+        generateFavoritesList();
+    });
 
     $('.header h3').click(function() {
         $('#conversion').attr('hidden', true);
