@@ -4,7 +4,9 @@ A simple currency app built using the [Fixer.io](http://fixer.io/) API.
 
 ## Live Demo
 
-You can check out the live demo of this project at [GitHub Pages](https://dakshshah96.github.io/currency-app/).
+You can check out the live demo of this project at [GitHub Pages](https://dakshshah96.github.io/currency-app/) or see the screencast below:
+
+![Currency App Screencast](http://g.recordit.co/CaOymb1FEC.gif)
 
 ## User stories
 
