@@ -9,6 +9,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
 
 /* App.js */
 
+// object to handle currency acronyms
 var currencies = {
     AUD: "Australian Dollar",
     BGN: "Bulgarian Lev",
@@ -62,6 +63,7 @@ $.getJSON("https://api.fixer.io/latest", function(data) {
     }
 });
 
+// returns the index of item in favorites list
 function searchForArray(haystack, needle){
     var i, j, current;
     for (i = 0; i < haystack.length; ++i) {
@@ -80,15 +82,17 @@ function generateFavoritesList() {
     var list = $('#favorites-list');
     var listParent = list.parent();
 
+    // append each favorite to list item
     list.empty().each(function(i) {
         for (var x = 0; x < favorites.length; x++) {
-            $(this).append('<li>' + favorites[x][0] + ' to ' + favorites[x][1] + '<i class="fa fa-trash delete-icon" aria-hidden="true"></i></li>');
+            $(this).append('<li>' + favorites[x][0] + ' to ' + favorites[x][1] + '<i class="icon-trash-empty delete-icon" aria-hidden="true"></i></li>');
             if (x == favorites.length - 1) {
                 $(this).appendTo(listParent);
             }
         }
     });
 
+    // show number of favorites in list
     if (favorites.length === 0) {
         $('.favorites-message').text("Looks like you have no favorites saved. You can add new favorites while converting currencies!");
     } else {
@@ -118,11 +122,13 @@ function updateResults() {
 
 $(function() {
 
+    // delete individual item from favorites
     $('#favorites-list').on('click', 'li', function() {
         favorites.splice($(this).index(), 1);
         generateFavoritesList();
     });
 
+    // go back to landing page on header click
     $('.header h3').click(function() {
         $('#conversion').attr('hidden', true);
         $('#favorites').attr('hidden', true);
@@ -130,6 +136,7 @@ $(function() {
         $('#intro').removeAttr('hidden');
     });
 
+    // go to conversion screen
     $('.convert-btn').click(function() {
         $('#from-entry').val('');
         $('#conversion').removeAttr('hidden');
@@ -138,6 +145,7 @@ $(function() {
         $('#results').attr('hidden', true);
     });
 
+    // show favorites screen
     $('.show-favorites').click(function() {
         generateFavoritesList();
         $('#favorites').removeAttr('hidden');
@@ -146,16 +154,18 @@ $(function() {
         $('#results').attr('hidden', true);
     });
 
+    // add new favorite from conversion screen
     $('#favorite-btn').on('click', function(e) {
         e.preventDefault();
         var fromCurr = $('#from-currency').find(':selected').text();
         var toCurr = $('#to-currency').find(':selected').text();
         $('#success-message').fadeIn('fast');
+        // check if item already exists in favorites
         if (searchForArray(favorites, [fromCurr, toCurr]) === -1) {
             favorites.push([fromCurr, toCurr]);
-            $('#success-message').html('<i style="color: green" class="fa fa-check-circle-o" aria-hidden="true"></i>       ' + fromCurr + ' to ' + toCurr + ' added to favorites.');
+            $('#success-message').html('<i style="color: green" class="icon-ok-circled" aria-hidden="true"></i>       ' + fromCurr + ' to ' + toCurr + ' added to favorites.');
         } else {
-            $('#success-message').html('<i style="color: red" class="fa fa-times" aria-hidden="true"></i>       ' + 'Bam, this favorite already exists!');
+            $('#success-message').html('<i style="color: red" class="icon-cancel" aria-hidden="true"></i>       ' + 'Bam, this favorite already exists!');
         }
         setTimeout(function() {
             $('#success-message').fadeOut('fast');
@@ -163,18 +173,23 @@ $(function() {
         generateFavoritesList();
     });
 
+    // delete all favorites
     $('#delete-favorites').click(function() {
         localStorage.removeItem("favorites");
         favorites = [];
         generateFavoritesList();
     });
 
+    // initialize select2 select boxes
     $("#from-currency, #to-currency").select2();
 
+    // update conversion results on input
     $('#from-entry').on('input', updateResults);
 
+    // update conversion results on currency change
     $('#from-currency, #to-currency').change(updateResults);
 
+    // set localStorage item before browser window closes
     $(window).on('beforeunload', function() {
         localStorage.setItem("favorites", JSON.stringify(favorites));
     });
