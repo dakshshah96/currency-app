@@ -19,37 +19,131 @@
 .flag-icon:before {
   content: "\00a0";
 }
-.flag-icon-au {background-image: url(../img/flags/au.svg);}
-.flag-icon-bg {background-image: url(../img/flags/bg.svg);}
-.flag-icon-br {background-image: url(../img/flags/br.svg);}
-.flag-icon-ca {background-image: url(../img/flags/ca.svg);}
-.flag-icon-ch {background-image: url(../img/flags/ch.svg);}
-.flag-icon-cn {background-image: url(../img/flags/cn.svg);}
-.flag-icon-cz {background-image: url(../img/flags/cz.svg);}
-.flag-icon-dk {background-image: url(../img/flags/dk.svg);}
-.flag-icon-gb {background-image: url(../img/flags/gb.svg);}
-.flag-icon-hk {background-image: url(../img/flags/hk.svg);}
-.flag-icon-hr {background-image: url(../img/flags/hr.svg);}
-.flag-icon-hu {background-image: url(../img/flags/hu.svg);}
-.flag-icon-id {background-image: url(../img/flags/id.svg);}
-.flag-icon-il {background-image: url(../img/flags/il.svg);}
-.flag-icon-in {background-image: url(../img/flags/in.svg);}
-.flag-icon-jp {background-image: url(../img/flags/jp.svg);}
-.flag-icon-kr {background-image: url(../img/flags/kr.svg);}
-.flag-icon-mx {background-image: url(../img/flags/mx.svg);}
-.flag-icon-my {background-image: url(../img/flags/my.svg);}
-.flag-icon-no {background-image: url(../img/flags/no.svg);}
-.flag-icon-nz {background-image: url(../img/flags/nz.svg);}
-.flag-icon-ph {background-image: url(../img/flags/ph.svg);}
-.flag-icon-pl {background-image: url(../img/flags/pl.svg);}
-.flag-icon-ro {background-image: url(../img/flags/ro.svg);}
-.flag-icon-ru {background-image: url(../img/flags/ru.svg);}
-.flag-icon-se {background-image: url(../img/flags/se.svg);}
-.flag-icon-sg {background-image: url(../img/flags/sg.svg);}
-.flag-icon-th {background-image: url(../img/flags/th.svg);}
-.flag-icon-tr {background-image: url(../img/flags/tr.svg);}
-.flag-icon-us {background-image: url(../img/flags/us.svg);}
-.flag-icon-za {background-image: url(../img/flags/za.svg);}
+
+.flag-icon-au {
+  background-image: url(../img/flags/au.svg);
+}
+
+.flag-icon-bg {
+  background-image: url(../img/flags/bg.svg);
+}
+
+.flag-icon-br {
+  background-image: url(../img/flags/br.svg);
+}
+
+.flag-icon-ca {
+  background-image: url(../img/flags/ca.svg);
+}
+
+.flag-icon-ch {
+  background-image: url(../img/flags/ch.svg);
+}
+
+.flag-icon-cn {
+  background-image: url(../img/flags/cn.svg);
+}
+
+.flag-icon-cz {
+  background-image: url(../img/flags/cz.svg);
+}
+
+.flag-icon-dk {
+  background-image: url(../img/flags/dk.svg);
+}
+
+.flag-icon-gb {
+  background-image: url(../img/flags/gb.svg);
+}
+
+.flag-icon-hk {
+  background-image: url(../img/flags/hk.svg);
+}
+
+.flag-icon-hr {
+  background-image: url(../img/flags/hr.svg);
+}
+
+.flag-icon-hu {
+  background-image: url(../img/flags/hu.svg);
+}
+
+.flag-icon-id {
+  background-image: url(../img/flags/id.svg);
+}
+
+.flag-icon-il {
+  background-image: url(../img/flags/il.svg);
+}
+
+.flag-icon-in {
+  background-image: url(../img/flags/in.svg);
+}
+
+.flag-icon-jp {
+  background-image: url(../img/flags/jp.svg);
+}
+
+.flag-icon-kr {
+  background-image: url(../img/flags/kr.svg);
+}
+
+.flag-icon-mx {
+  background-image: url(../img/flags/mx.svg);
+}
+
+.flag-icon-my {
+  background-image: url(../img/flags/my.svg);
+}
+
+.flag-icon-no {
+  background-image: url(../img/flags/no.svg);
+}
+
+.flag-icon-nz {
+  background-image: url(../img/flags/nz.svg);
+}
+
+.flag-icon-ph {
+  background-image: url(../img/flags/ph.svg);
+}
+
+.flag-icon-pl {
+  background-image: url(../img/flags/pl.svg);
+}
+
+.flag-icon-ro {
+  background-image: url(../img/flags/ro.svg);
+}
+
+.flag-icon-ru {
+  background-image: url(../img/flags/ru.svg);
+}
+
+.flag-icon-se {
+  background-image: url(../img/flags/se.svg);
+}
+
+.flag-icon-sg {
+  background-image: url(../img/flags/sg.svg);
+}
+
+.flag-icon-th {
+  background-image: url(../img/flags/th.svg);
+}
+
+.flag-icon-tr {
+  background-image: url(../img/flags/tr.svg);
+}
+
+.flag-icon-us {
+  background-image: url(../img/flags/us.svg);
+}
+
+.flag-icon-za {
+  background-image: url(../img/flags/za.svg);
+}
+
 
 /*
 Fontello Custom Font

@@ -136,7 +136,7 @@ $(function() {
     });
 
     // delete individual item from favorites
-    $('#favorites-list').on('click', 'li', function() {
+    $('#favorites-list').on('click', 'li .delete-icon', function() {
         favorites.splice($(this).index(), 1);
         generateFavoritesList();
     });
